@@ -42,8 +42,3 @@ for (let i = 0; i < questions.length; i++) {
     }
   }
 }
-
-// 4. Display the number of correct answers to the user
-document.querySelector(
-  "main"
-).innerHTML = `You answered ${correctAnswer} questions correct.`;
