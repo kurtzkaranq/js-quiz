@@ -7,6 +7,8 @@ let questions = [
 
 // 2. Store the number of questions answered correctly
 let correctAnswer = 0;
+let wrongAnswer = 0;
+let wrongQuestions;
 /* 
 3. Use a loop to cycle through each question
 - Present each question to the user
@@ -22,9 +24,25 @@ for (let i = 0; i < questions.length; i++) {
   if (input == answer) {
     correctAnswer++;
   } else {
-    let wrongAnswer = question;
+    wrongAnswer++;
+    wrongQuestions = question;
+    console.log(wrongAnswer);
+    if (wrongAnswer == 3) {
+      document.querySelector(
+        "main"
+      ).innerHTML = `You answered ${wrongAnswer} questions wrong`;
+    } else if (wrongAnswer == 0) {
+      document.querySelector(
+        "main"
+      ).innerHTML = `You answered ${correctAnswer} questions all correct.`;
+    } else {
+      document.querySelector(
+        "main"
+      ).innerHTML = `You answered ${correctAnswer} questions correct and ${wrongAnswer} questions wrong.`;
+    }
   }
 }
+
 // 4. Display the number of correct answers to the user
 document.querySelector(
   "main"
